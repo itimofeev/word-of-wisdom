@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pow
+    container_name: server
+    command: [ "/app/server" ]
+    restart: always
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pow
+    container_name: client
+    command: [ "/app/client" ]
+    environment:
+      - SERVER_ADDRESS=server:8080
+    depends_on:
+      - server
+    links:
+      - server
