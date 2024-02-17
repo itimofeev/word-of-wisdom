@@ -8,10 +8,10 @@ import (
 
 	"github.com/kelseyhightower/envconfig"
 
-	"github.com/itimofeev/word-of-wisdom/internal/client"
-	signal "github.com/itimofeev/word-of-wisdom/internal/context"
-	"github.com/itimofeev/word-of-wisdom/internal/transport"
+	"github.com/itimofeev/word-of-wisdom/internal/app/client"
+	signal "github.com/itimofeev/word-of-wisdom/pkg/context"
 	"github.com/itimofeev/word-of-wisdom/pkg/pow"
+	"github.com/itimofeev/word-of-wisdom/pkg/transport"
 )
 
 type config struct {

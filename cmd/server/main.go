@@ -9,11 +9,11 @@ import (
 	"github.com/kelseyhightower/envconfig"
 	"golang.org/x/sync/errgroup"
 
-	signal "github.com/itimofeev/word-of-wisdom/internal/context"
-	"github.com/itimofeev/word-of-wisdom/internal/quotes"
-	"github.com/itimofeev/word-of-wisdom/internal/server"
-	"github.com/itimofeev/word-of-wisdom/internal/transport"
+	"github.com/itimofeev/word-of-wisdom/internal/app/server"
+	"github.com/itimofeev/word-of-wisdom/internal/repository/quotes"
+	signal "github.com/itimofeev/word-of-wisdom/pkg/context"
 	"github.com/itimofeev/word-of-wisdom/pkg/pow"
+	"github.com/itimofeev/word-of-wisdom/pkg/transport"
 )
 
 type config struct {

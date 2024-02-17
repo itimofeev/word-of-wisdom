@@ -85,7 +85,9 @@ func (c *Client) fetchQuote(ctx context.Context) error {
 		return fmt.Errorf("failed to read response challenge message: %w", err)
 	}
 
+	start := time.Now()
 	solution := c.pow.SolveChallenge(responseChallengeMessage.Data, responseChallengeMessage.Difficulty)
+	slog.InfoContext(ctx, "solved challenge", "time", time.Since(start))
 
 	if err := c.transport.WriteMessage(conn, c.ioTimeout, &entity.SolvedChallengeMessage{Nonce: solution}); err != nil {
 		return fmt.Errorf("failed to send solved challenge message: %w", err)

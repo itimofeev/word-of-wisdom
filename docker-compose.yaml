@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pow
+    image: itimofeev/pow:latest
     container_name: server
     command: [ "/app/server" ]
     restart: always
@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pow
+    image: itimofeev/pow:latest
     container_name: client
     command: [ "/app/client" ]
     environment:
