@@ -67,7 +67,7 @@ func New(cfg Config) (*Server, error) {
 }
 
 func (s *Server) Start(ctx context.Context) error {
-	ln, err := net.Listen("tcp", ":8080")
+	ln, err := net.Listen("tcp", s.addr)
 	if err != nil {
 		return fmt.Errorf("failed to listen: %w", err)
 	}
