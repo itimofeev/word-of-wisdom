@@ -5,11 +5,16 @@ Design and implement “Word of Wisdom” tcp server.
 • After Prof Of Work verification, server should send one of the quotes from “word of wisdom” book or any other collection of the quotes.
 • Docker file should be provided both for the server and for the client that solves the POW challenge
 
-## Description
+## How to use
 You will need go 1.21+ installed to build binaries or run tests.
-
 
 ```
 # Run both server and client in docker
 make run-apps
 ```
+
+## POW algorithm
+As the PoW algorithm, a simplified analog of hashcash was chosen, in which we attempt to find a hash from the original challenge data and our nonce. 
+This hash must meet a certain condition, namely having the required number of zeros at the beginning.
+
+This algorithm was chosen because it is relatively simple to implement, widely used, and applied in Bitcoin, and it allows for dynamic adjustment of difficulty.

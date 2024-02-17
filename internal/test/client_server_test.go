@@ -16,6 +16,7 @@ import (
 	"github.com/itimofeev/word-of-wisdom/pkg/transport"
 )
 
+// TestIntegration tests server and client.
 func TestIntegration(t *testing.T) {
 	repo, err := quotes.New()
 	require.NoError(t, err)

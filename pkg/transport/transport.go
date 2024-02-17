@@ -10,6 +10,7 @@ import (
 	"time"
 )
 
+// Transport provides methods for writing and reading arbitrary messages via net.Conn.
 type Transport struct {
 }
 

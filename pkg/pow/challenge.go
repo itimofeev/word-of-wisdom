@@ -12,6 +12,7 @@ import (
 	"time"
 )
 
+// ProofOfWork provides methods for making new challenge and for solving it.
 type ProofOfWork struct {
 	challengeSize uint
 	rand          *rand.Rand
@@ -52,6 +53,7 @@ func (p *ProofOfWork) generateHash(data []byte, nonce []byte) string {
 	return hash
 }
 
+// SolveChallenge solves challenge in several go-routines
 func (p *ProofOfWork) SolveChallenge(data []byte, difficulty uint) []byte {
 	nThreads := runtime.NumCPU()
 

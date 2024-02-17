@@ -9,6 +9,7 @@ import (
 )
 
 // SignalContext returns a context that is canceled if either SIGTERM or SIGINT signal is received.
+// Used for graceful shutdown of the application.
 func SignalContext() context.Context {
 	ctx, cancel := context.WithCancel(context.Background())
 
